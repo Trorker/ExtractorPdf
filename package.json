@@ -1,0 +1,50 @@
+{
+  "name": "extractor_pdf",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "commonjs",
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trorker/ExtractorPdf"
+  },
+
+  "author": "Ruslan Dzyuba",
+  "license": "MIT",
+  "description": "Extractor PDF for ST/RPC",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "0.0.4",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "^5.4.624",
+    "sweetalert2": "^11.0.0"
+  },
+  "devDependencies": {
+    "electron": "^40.4.1",
+    "electron-builder": "^26.7.0"
+  },
+  "build": {
+    "appId": "local.extractor.pdf",
+    "productName": "ExtractorPdf",
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "forceCodeSigning": false
+  }
+}

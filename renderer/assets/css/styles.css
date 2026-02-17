@@ -1,0 +1,242 @@
+:root {
+  --accent: #ff0f64;
+  --border: #e6e6e6;
+  --bg: #fafafa;
+  --text: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*
+Source - https://stackoverflow.com/a/4407335
+Posted by Blowsie, modified by community. See post 'Timeline' for change history
+Retrieved 2026-02-17, License - CC BY-SA 4.0
+*/
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: white;
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 15, 100, 0.12);
+}
+
+.main {
+  padding: 16px;
+}
+
+img.swal2-image {
+  border-radius: 50%;
+  height: 250px !important;
+  width: 250px !important;
+}
+
+
+/* HOME centered minimal drop zone */
+.centerWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  gap: 12px;
+  text-align: center;
+}
+
+.drop {
+  width: min(720px, 92vw);
+  border-radius: 14px;
+  border: 2px dashed #aaa;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  user-select: none;
+  transition: .15s;
+  background: #fafafa;
+}
+
+.drop.active {
+  border-color: #ff0f64;
+  background: rgba(255, 15, 100, 0.06);
+}
+
+.drop .title {
+  font-weight: 700;
+}
+
+.drop .sub {
+  color: #666;
+  margin-top: 6px;
+}
+
+.drop .btnRow {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.drop button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: #fff;
+}
+
+.drop button.primary {
+  background: #ff0f64;
+  color: #fff;
+  border-color: #ff0f64;
+}
+
+.drop button.primary:hover {
+  filter: brightness(.96);
+}
+
+.status {
+  margin-top: 8px;
+}
+
+.status b {
+  color: #ff0f64;
+}
+
+/* Pages grid */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.page {
+  width: 190px;
+  height: calc(1.414285714285714 * 190px);
+  background: #eee;
+  margin: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.page.horizontal {
+  height: 190px;
+  width: calc(1.414285714285714 * 190px);
+}
+
+.page:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}
+
+.page.select {
+  border: 2px solid #ff0f64;
+  box-shadow: 0 0 0 2px rgba(255, 15, 100, .15);
+}
+
+.page.select > .n-page {
+  display: block;
+}
+
+.n-page {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.1rem;
+  background: #00000080;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+
+.canvas-page {
+  height: 100%;
+  width: 100%;
+  filter: blur(14px);
+  transition: filter .2s;
+}
+
+/* action bar appears only after load */
+.actionBar {
+  display: none;
+  margin-top: 10px;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.actionBar.show {
+  display: flex;
+}
+
+.actionBar button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: #fff;
+}
+
+.actionBar button.primary {
+  background: #ff0f64;
+  color: #fff;
+  border-color: #ff0f64;
+}
+
+.actionBar button.primary:hover {
+  filter: brightness(.96);
+}
